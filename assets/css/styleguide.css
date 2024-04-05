@@ -1,0 +1,299 @@
+@font-face {
+  font-family: "Alata";
+  src: url("/assets/fonts/Alata/Alata-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Josefin";
+  src: url("/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-dark: hsl(0, 0%, 0%);
+  --color-light: hsl(0, 0%, 100%);
+  --color-gray: hsl(0, 0%, 55%);
+  --color-dark-gray: hsl(0, 0%, 41%);
+  --color-dc: 10, 10, 10;
+  --container-padding: 10vw;
+  --section-padding: 14vh;
+  --border-radius: 0.2rem;
+  --animation-primary: 0.5s ease-in-out;
+  --animation-smooth: 0.7s ease-in-out;
+}
+
+@media screen and (max-width: 720px) {
+  :root {
+    --container-padding: 6vw;
+    --section-padding: 9vh;
+  }
+}
+
+::selection {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-shadow: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+*,
+*::before,
+*::after {
+  --webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  --webkit-font-smoothing: antialiased;
+  font-family: "Josefin", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.1;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-light);
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+svg,
+video,
+img,
+canvas {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+ol,
+strong {
+  margin: 0;
+  padding: 0;
+  font-style: normal;
+}
+
+.theme-dark h1,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark h4,
+.theme-dark h5,
+.theme-dark h6 .theme-dark span,
+.theme-dark a,
+.theme-dark li {
+  color: var(--color-light);
+}
+
+.theme-light h1,
+.theme-light h2,
+.theme-light h3,
+.theme-light h4,
+.theme-light h5,
+.theme-light h6 .theme-light span,
+.theme-light a,
+.theme-light li {
+  color: var(--color-dark);
+}
+
+h1 {
+  font-family: "Josefin", sans-serif;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4.3vw, 4.5rem);
+  font-style: normal;
+  line-height: 1.1;
+  color: var(--color-light);
+}
+
+h2 {
+  font-family: "Josefin", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  font-size: clamp(2rem, 3vw, 4.1rem);
+  font-style: normal;
+  color: var(--color-dark);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: "Josefin", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 3.3vw, 1.9rem);
+  font-style: normal;
+  line-height: 1.1;
+  color: var(--color-light);
+  text-transform: uppercase;
+}
+
+p {
+  font-family: "Alata", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--color-gray);
+}
+
+.section {
+  position: relative;
+  display: block;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.container {
+  max-width: 100em;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+main {
+  overflow: hidden;
+  width: 100vw;
+  display: block;
+  height: 100%;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  width: 100%;
+  position: relative;
+  display: block;
+  order: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+img.overlay {
+  object-fit: cover;
+}
+
+/*----------------------------------------------- buttons -------------------------------------------------------*/
+.btn-row {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.btn {
+  position: relative;
+  border: 0;
+  outline: 0;
+}
+
+.btn.primary .btn-click {
+  outline: 0;
+  border: 1.5px solid var(--color-dark);
+  pointer-events: all;
+  cursor: pointer;
+  background-color: transparent;
+  transition: var(--animation-primary);
+  border-radius: 0.2rem;
+  padding: 0.7rem 2.2rem;
+}
+
+.btn.primary .btn-text {
+  color: var(--color-dark);
+  text-transform: uppercase;
+  font-family: "Alata", sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  transition: var(--animation-primary);
+}
+
+.btn.primary .btn-click:hover {
+  background-color: var(--color-dark);
+  scale: 0.9;
+}
+
+.btn.primary .btn-click:hover .btn-text {
+  color: var(--color-light);
+}
+
+.btn-link .btn-content {
+  position: relative; /* Ensure the .btn-content is positioned */
+  display: inline-block; /* Shrink to fit the content */
+}
+
+.btn-link .btn-content::after {
+  content: "";
+  bottom: -6px;
+  width: 100%;
+  left: 0;
+  height: 1.4px;
+  background: var(--color-light);
+  position: absolute;
+  transform: rotate(0.001deg) scaleX(0);
+  transition: transform var(--animation-primary);
+  transform-origin: middle;
+}
+
+.btn-link:hover .btn-content::after {
+  transform: rotate(0.001deg) scaleX(1);
+  transform-origin: middle;
+}
