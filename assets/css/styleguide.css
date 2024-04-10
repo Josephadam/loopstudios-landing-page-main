@@ -31,6 +31,7 @@
   :root {
     --container-padding: 6vw;
     --section-padding: 9vh;
+    --section-padding-small: 8vw;
   }
 }
 

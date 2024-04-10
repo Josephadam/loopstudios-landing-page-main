@@ -1,13 +1,18 @@
 $(document).ready(() => {
 $('.hamburger').click(function() {
     $('.nav-bg').toggleClass('active');
-    $(this).toggleClass('active')
+    $(this).toggleClass('active');
+   $('.nav-up-down').css({
+    transform: 'none',
+    transition: 'none'
+   })
 });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     navUpDown();
     initLoader();
+    adjustViewportHeight();
 });
 
 function navUpDown() {
@@ -66,5 +71,14 @@ revealContainers.forEach((container) => {
     ease: Power2.out
   });
 });
+
+function adjustViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', adjustViewportHeight);
+adjustViewportHeight();
+
 
 

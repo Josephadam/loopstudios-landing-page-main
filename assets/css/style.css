@@ -95,6 +95,10 @@
   display: none;
 }
 
+.nav-mobile.active {
+  position: fixed;
+}
+
 .nav-mobile .nav-bg {
   position: relative;
   height: 100vh;
@@ -175,9 +179,12 @@
 }
 
 @media screen and (max-width: 720px) {
-  .home-header,
+  .home-header {
+    height: 100svh; /* Fallback */
+  }
+
   .home-header .thumbnail {
-    height: 100vh;
+    height: 100%;
   }
 
   .home-header .flex-col {
